@@ -10,11 +10,90 @@ body {
   background-color: #fafafa;
   color: #212121;
   line-height: 1.5;
+  background-image: linear-gradient(to right, #757f9a, #d7dde8);
+}
+
+ul {
+  list-style-type: none;
 }
 
 #search-box {
+  display: block;
+  margin: 0 auto;
+  margin-top: 150px;
+
   font: inherit;
-  padding: 8px;
+  padding: 5px 15px;
   max-width: 320px;
+  width: 320px;
+  height: 45px;
   margin-bottom: 16px;
+
+  border-radius: 20px;
+  border: 3px solid darkslategray;
+  outline: none;
+
+  background: transparent;
+  color: black;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.country-list,
+.country-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 30px;
+  gap: 15px;
+
+  min-width: 150px;
+  max-width: 600px;
+  min-height: 130px;
+
+  color: black;
+}
+
+.country-info {
+  border-radius: 0.75rem;
+  border: 3px solid darkslategray;
+}
+.country-name {
+  display: flex;
+  align-items: center;
+  gap: 15 px;
+}
+.country-info img {
+  margin-right: 10px;
+  margin-left: 0px;
+  display: block;
+}
+
+.country-list span {
+  display: inline-block;
+  font-size: 20px;
+  vertical-align: super;
+}
+img + p {
+  font-weight: 700;
+  font-size: 40px;
+  color: black;
+  text-align: center;
+}
+img {
+  border-radius: 25px;
+}
+p {
+  font-weight: 700;
+  font-size: 20px;
+  color: darkslategray;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+p > span {
+  font-weight: 500;
+  font-size: 20px;
+  color: teal;
 }

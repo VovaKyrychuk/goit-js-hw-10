@@ -8,7 +8,6 @@ const DEBOUNCE_DELAY = 300;
 const countriesList = document.querySelector('.country-list');
 const countryInfo = document.querySelector('.country-info');
 const searchBox = document.querySelector('#search-box');
-const body = document.querySelector('body');
 
 searchBox.addEventListener('input', debounce(onInputSearch, DEBOUNCE_DELAY));
 
@@ -43,16 +42,16 @@ function onInputSearch(e) {
 }
 
 function renderedCountries(result) {
-  const inputLetters = result.length;
+  const inputText = result.length;
 
-  if (inputLetters === 1) {
+  if (inputText === 1) {
     countriesList.innerHTML = '';
     countriesList.style.visibility = 'hidden';
     countryInfo.style.visibility = 'visible';
     countryCardMarkup(result);
   }
 
-  if (inputLetters > 1 && inputLetters <= 10) {
+  if (inputText > 1 && inputText <= 10) {
     countryInfo.innerHTML = '';
     countryInfo.style.visibility = 'hidden';
     countriesList.style.visibility = 'visible';
@@ -63,10 +62,9 @@ function renderedCountries(result) {
 function countriesListMarkup(result) {
   const listMarkup = result
     .map(({ name, flags }) => {
-      return /*html*/ `<li>
-                        <img src="${flags.svg}" alt="${name}" width="60" height="auto">
-                        <span>${name.official}</span>
-                </li>`;
+      return `<li><img src="${flags.svg}" alt="${name}" width="60" height="auto">
+<span>${name.official}</span>
+</li>`;
     })
     .join('');
   countriesList.innerHTML = listMarkup;
@@ -77,9 +75,10 @@ function countryCardMarkup(result) {
   const cardMarkup = result
     .map(({ flags, name, capital, population, languages }) => {
       languages = Object.values(languages).join(', ');
-      return /*html*/ `
-            <img src="${flags.svg}" alt="${name}" width="320" height="auto">
-            <p> ${name.official}</p>
+      return `
+      <div class="country-name">
+            <img src="${flags.svg}" alt="${name}" width="90" height="auto">
+            <p> ${name.official}</p></div>
             <p>Capital: <span> ${capital}</span></p>
             <p>Population: <span> ${population}</span></p>
             <p>Languages: <span> ${languages}</span></p>`;
