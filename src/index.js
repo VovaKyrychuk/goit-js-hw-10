@@ -10,6 +10,7 @@ const countryInfo = document.querySelector('.country-info');
 const searchBox = document.querySelector('#search-box');
 
 searchBox.addEventListener('input', debounce(onInputSearch, DEBOUNCE_DELAY));
+countryInfo.style.visibility = 'hidden';
 
 function onInputSearch(e) {
   e.preventDefault();

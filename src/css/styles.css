@@ -14,7 +14,7 @@ body {
 }
 
 ul {
-  list-style-type: none;
+  list-style: none;
 }
 
 #search-box {
@@ -57,7 +57,7 @@ ul {
 }
 
 .country-info {
-  border-radius: 0.75rem;
+  border-radius: 10px;
   border: 3px solid darkslategray;
 }
 .country-name {
